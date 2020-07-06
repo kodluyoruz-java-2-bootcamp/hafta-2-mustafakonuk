@@ -11,8 +11,12 @@ package org.kodluyoruz;
  *
  * TODO Bu 3 özellik ve bunların metotları için gereken kodları bu sınıfın içine yazın
  */
-public class Motherboard
+public class Motherboard extends Hardware
 {
+
+    private String cpuArchitect; //Hangi marka işlemcilere uygundur.
+    private boolean wifiIncluded; //Wifi var mı yok mu.
+    private boolean bluetoothIncluded; //Bluetooth var mı yok mu.
 
     /*
      * Eğer anakartın üzerinde WiFi chipset'i varsa anakartın fiyatı 250 TL artar.
