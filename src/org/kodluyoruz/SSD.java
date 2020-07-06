@@ -13,9 +13,23 @@ public class SSD extends Hardware
 {
     private int memory; //Hafıza boyutu.
 
+    public int getMemory() {
+        return memory;
+    }
+
+    public void setMemory(int memory) {
+        this.memory = memory;
+    }
+
     /*
      * Eğer SSD'nin hafızası 750 GB'tan fazlaysa, her 250 GB için fiyatı 275 TL artar.
      * TODO buna göre Hardware sınıfındaki fiyat hesaplayan metodu bu sınıfta yeniden yazın
      */
 
+    @Override
+    public void setPrice(double price) {
+        //super.setPrice(price);
+
+        //Doldurulacak.
+    }
 }

@@ -15,10 +15,33 @@ public class GPU extends Hardware
 
     private int memory; //Hafıza boyutu.
     private int bits; //Renk skalası.
+
+    public int getMemory() {
+        return memory;
+    }
+
+    public void setMemory(int memory) {
+        this.memory = memory;
+    }
+
+    public int getBits() {
+        return bits;
+    }
+
+    public void setBits(int bits) {
+        this.bits = bits;
+    }
+
     /*
      * Eğer ekran kartının hafızası 8 GB'tan fazlaysa, her 2 GB için fiyatı 250 TL artar.
      * Eğer ekran kartının renk skalası 128 bits'ten fazlaysa, her 64 bits için fiyatı 400 TL artar.
      * TODO buna göre Hardware sınıfındaki fiyat hesaplayan metodu bu sınıfta yeniden yazın
      */
 
+    @Override
+    public void setPrice(double price) {
+        //super.setPrice(price);
+
+        //Doldurulacak.
+    }
 }
