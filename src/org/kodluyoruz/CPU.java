@@ -37,12 +37,41 @@ public class CPU extends Hardware
      */
 
     @Override
-    public void setPrice(double price) {
-        //super.setPrice(price);
+    public String getBrand() {
 
+        return brand;
+    }
+
+    @Override
+    public void setBrand(String brand) {
+
+        this.brand = brand;
+    }
+
+    @Override
+    public double getPrice() {
+
+        double tmp = 0;
         if (cores >= 6) {
 
-            price += ((price*100)/30); //%30 fiyatı arttı.
+            price += ((price*30)/100); //%30 fiyatı arttı.
         }
+        return price;
+    }
+
+    @Override
+    public void setPrice(double price) {
+
+        this.price = price;
+    }
+
+    @Override
+    public int getPower() {
+        return power;
+    }
+
+    @Override
+    public void setPower(int power) {
+        this.power = power;
     }
 }

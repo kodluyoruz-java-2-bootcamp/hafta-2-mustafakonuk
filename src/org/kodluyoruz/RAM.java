@@ -16,18 +16,22 @@ public class RAM extends Hardware
     private int frequency; //Frekans.
 
     public int getMemory() {
+
         return memory;
     }
 
     public void setMemory(int memory) {
+
         this.memory = memory;
     }
 
     public int getFrequency() {
+
         return frequency;
     }
 
     public void setFrequency(int frequency) {
+
         this.frequency = frequency;
     }
 
@@ -38,9 +42,50 @@ public class RAM extends Hardware
      */
 
     @Override
-    public void setPrice(double price) {
-        //super.setPrice(price);
+    public String getBrand() {
 
-        //Doldurulacak.
+        return brand;
+    }
+
+    @Override
+    public void setBrand(String brand) {
+
+        this.brand = brand;
+    }
+
+    @Override
+    public double getPrice() {
+
+        if (memory > 16) {
+
+            memory -= 16;
+            memory /= 4;
+            price += memory * 100;
+        }
+        if (frequency > 3600) {
+
+            frequency -= 3600;
+            frequency /= 400;
+            price += frequency * 200;
+        }
+        return price;
+    }
+
+    @Override
+    public void setPrice(double price) {
+
+        this.price = price;
+    }
+
+    @Override
+    public int getPower() {
+
+        return power;
+    }
+
+    @Override
+    public void setPower(int power) {
+
+        this.power = power;
     }
 }

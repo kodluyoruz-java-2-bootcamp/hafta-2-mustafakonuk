@@ -12,31 +12,19 @@ package org.kodluyoruz;
  */
 public abstract class Hardware
 {
-    private String brand; //Markası
-    private double price; //Fiyatı
-    private int power; //Harcadığı güç. 1 ile 150 arasında bir değer olmalı.
+    protected String brand; //Markası
+    protected double price; //Fiyatı
+    protected int power; //Harcadığı güç. 1 ile 150 arasında bir değer olmalı.
 
-    public String getBrand() {
-        return brand;
-    }
+    public abstract String getBrand();
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
+    public abstract void setBrand(String brand);
 
-    public double getPrice() {
-        return price;
-    }
+    public abstract double getPrice();
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+    public abstract void setPrice(double price);
 
-    public int getPower() {
-        return power;
-    }
+    public abstract int getPower();
 
-    public void setPower(int power) {
-        this.power = power;
-    }
+    public abstract void setPower(int power);
 }

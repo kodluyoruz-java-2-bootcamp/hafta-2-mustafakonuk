@@ -14,10 +14,12 @@ public class SSD extends Hardware
     private int memory; //Hafıza boyutu.
 
     public int getMemory() {
+
         return memory;
     }
 
     public void setMemory(int memory) {
+
         this.memory = memory;
     }
 
@@ -26,10 +28,47 @@ public class SSD extends Hardware
      * TODO buna göre Hardware sınıfındaki fiyat hesaplayan metodu bu sınıfta yeniden yazın
      */
 
+
+    @Override
+    public String getBrand() {
+
+        return brand;
+    }
+
+    @Override
+    public void setBrand(String brand) {
+
+
+        this.brand = brand;
+    }
+
+    @Override
+    public double getPrice() {
+
+        if (memory > 750) {
+            memory -= 750;
+            memory /= 250;
+            price += memory*275;
+        }
+        return price;
+    }
+
     @Override
     public void setPrice(double price) {
-        //super.setPrice(price);
 
-        //Doldurulacak.
+
+        this.price = price;
+    }
+
+    @Override
+    public int getPower() {
+
+        return power;
+    }
+
+    @Override
+    public void setPower(int power) {
+
+        this.power = power;
     }
 }

@@ -17,18 +17,22 @@ public class GPU extends Hardware
     private int bits; //Renk skalası.
 
     public int getMemory() {
+
         return memory;
     }
 
     public void setMemory(int memory) {
+
         this.memory = memory;
     }
 
     public int getBits() {
+
         return bits;
     }
 
     public void setBits(int bits) {
+
         this.bits = bits;
     }
 
@@ -39,9 +43,51 @@ public class GPU extends Hardware
      */
 
     @Override
-    public void setPrice(double price) {
-        //super.setPrice(price);
+    public String getBrand() {
 
-        //Doldurulacak.
+        return brand;
+    }
+
+    @Override
+    public void setBrand(String brand) {
+
+        this.brand = brand;
+    }
+
+    @Override
+    public double getPrice() {
+
+        if ( memory > 8) {
+
+            memory -= 8;
+            memory /= 2;
+            price += memory*250;
+        }
+        if ( bits > 128 ) {
+
+            bits -= 128;
+            bits /= 64;
+            price += bits*400;
+        }
+        return price;
+    }
+
+    @Override
+    public void setPrice(double price) {
+
+        this.price = price;
+        System.out.println(this.price);
+    }
+
+    @Override
+    public int getPower() {
+
+        return power;
+    }
+
+    @Override
+    public void setPower(int power) {
+
+        this.power = power;
     }
 }

@@ -11,7 +11,7 @@ package org.kodluyoruz;
  *
  * TODO Bu 3 özellik ve bunların metotları için gereken kodları bu sınıfın içine yazın
  */
-public class Motherboard extends Hardware
+public  class Motherboard extends Hardware
 {
     private String cpuArchitect; //Hangi marka işlemcilere uygundur.
     private boolean wifiIncluded; //Wifi var mı yok mu.
@@ -46,22 +46,45 @@ public class Motherboard extends Hardware
      * Eğer anakartın üzerinde bluetooth chipset'i varsa anakartın fiyatı 100 TL artar.
      * TODO buna göre Hardware sınıfındaki fiyat hesaplayan metodu bu sınıfta yeniden yazın
      */
+
+    @Override
+    public String getBrand() {
+
+        return brand;
+    }
+
+    @Override
+    public void setBrand(String brand) {
+
+        this.brand = brand;
+    }
+
+    @Override
+    public double getPrice() {
+
+        if ( wifiIncluded == true ) {
+
+            price += 250;
+        }
+        if (bluetoothIncluded == true) {
+
+            price += 100;
+        }
+        return price;
+    }
+
     @Override
     public void setPrice(double price) {
-        //super.setPrice(price);
+        this.price = price;
+    }
 
-        if ( wifiIncluded == true && bluetoothIncluded == true) {
+    @Override
+    public int getPower() {
+        return power;
+    }
 
-            price += 250;
-            price += 100;
-        }
-        else if (wifiIncluded == true) {
-
-            price += 250;
-        }
-        else if (bluetoothIncluded == true) {
-
-            price += 100;
-        }
+    @Override
+    public void setPower(int power) {
+        this.power = power;
     }
 }
