@@ -72,6 +72,14 @@ public class CPU extends Hardware
 
     @Override
     public void setPower(int power) {
-        this.power = power;
+
+        if (power >= 1 && power <= 150) {
+            this.power = power;
+        }
+        else {
+
+            this.power = power;
+            System.out.println("CPU'da güç kullanımı [1-150] arasında olmalı!!");
+        }
     }
 }

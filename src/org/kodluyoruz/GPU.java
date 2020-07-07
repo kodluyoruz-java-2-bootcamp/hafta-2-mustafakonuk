@@ -61,13 +61,13 @@ public class GPU extends Hardware
 
             memory -= 8;
             memory /= 2;
-            price += memory*250;
+            price += memory * 250;
         }
         if ( bits > 128 ) {
 
             bits -= 128;
             bits /= 64;
-            price += bits*400;
+            price += bits * 400;
         }
         return price;
     }
@@ -88,6 +88,13 @@ public class GPU extends Hardware
     @Override
     public void setPower(int power) {
 
-        this.power = power;
+        if (power >= 1 && power <= 150) {
+            this.power = power;
+        }
+        else {
+
+            this.power = power;
+            System.out.println("GPU'da güç kullanımı [1-150] arasında olmalı!!");
+        }
     }
 }

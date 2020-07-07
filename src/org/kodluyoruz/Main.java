@@ -13,7 +13,6 @@ public class Main
          testComputer2();
     }
 
-
     private static void testComputer1()
     {
         Computer computer = new Computer();

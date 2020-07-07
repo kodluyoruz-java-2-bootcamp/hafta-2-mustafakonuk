@@ -85,15 +85,15 @@ public class Computer
         // Bu metot bilgisayarın donanımlarına bakarak toplam fiyatını hesaplar.
         // TODO metodu doldurun
 
-        double totalprice;
+        double totalPrice;
 
-        totalprice = motherboard.getPrice() +
+        totalPrice = motherboard.getPrice() +
                      cpu.getPrice() +
                      gpu.getPrice() +
                      ram.getPrice() +
                      ssd.getPrice();
 
-        return totalprice;
+        return totalPrice;
     }
 
     public int getTotalPower()

@@ -48,7 +48,7 @@ public class SSD extends Hardware
         if (memory > 750) {
             memory -= 750;
             memory /= 250;
-            price += memory*275;
+            price += memory * 275;
         }
         return price;
     }
@@ -69,6 +69,13 @@ public class SSD extends Hardware
     @Override
     public void setPower(int power) {
 
-        this.power = power;
+        if (power >= 1 && power <= 150) {
+            this.power = power;
+        }
+        else {
+
+            this.power = power;
+            System.out.println("SSD'de güç kullanımı [1-150] arasında olmalı!!");
+        }
     }
 }
